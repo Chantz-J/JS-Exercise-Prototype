@@ -38,15 +38,32 @@ function Airplane(name) {
       - Give instances of Person a method `.toString()`:
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
-  
- function Person() {
-    
-  }
- 
- 
+  // create constructor
+ function Person(name, age) {
+    this.name = name
+    this.age = age
+    this.stomach = []
 
-  
-  
+  }
+
+ Person.prototype.eat = function(edible){
+   if(this.stomach.length < 10){
+      this.stomach.push(edible)
+   } else null
+ }
+ Person.prototype.poop = function(){
+   this.stomach = []
+ }
+Person.prototype.toString = function(){
+  return `${this.name}, ${this.age}`
+}
+
+const Chantz = new Person('Chantz', 21)
+console.log(Chantz.toString)
+Chantz.eat('Turkey Sandwich')
+Chantz.eat('Turkey Sandwich')
+Chantz.eat('Turkey Sandwich')  
+console.log(Chantz.stomach)
   
   
   /*
@@ -63,8 +80,14 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+ function Car(model, milesPerGallon) {
+   this.model = model
+   this.milesPerGallon = milesPerGallon 
+   this.tank = 0
+   this.odometer = 0
+   this.fill = function(gallons){
+     return gallons + this.tank
+   }
   }
   
   
