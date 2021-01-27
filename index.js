@@ -85,10 +85,13 @@ console.log(Chantz.stomach)
    this.milesPerGallon = milesPerGallon 
    this.tank = 0
    this.odometer = 0
-   this.fill = function(gallons){
-     return gallons + this.tank
-   }
   }
+  Car.prototype.fill = function(gallons){
+    return this.tank += gallons
+  }
+  const Tesla = new Car('2021', '27')
+  Tesla.fill(10)
+
   
   
   /*
