@@ -115,10 +115,10 @@ console.log(Chantz.stomach)
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. If a function/method is called by a dot, the object to the left of that dot is the context of "this"
+    2. A constructor's method's "this" is meant in the context of the object that is created and returned by the constructor.
+    3. Whenever apply or call methods are used, "this" is given explicit context
+    4. If referenced global scope, it applies to the Window object
   */
   
   
